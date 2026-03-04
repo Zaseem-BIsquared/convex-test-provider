@@ -32,6 +32,16 @@
       "types": "./dist/vitest-plugin.d.ts",
       "import": "./dist/vitest-plugin.js",
       "default": "./dist/vitest-plugin.js"
+    },
+    "./playwright": {
+      "types": "./dist/playwright/index.d.ts",
+      "import": "./dist/playwright/index.js",
+      "default": "./dist/playwright/index.js"
+    },
+    "./rtl": {
+      "types": "./dist/rtl/index.d.ts",
+      "import": "./dist/rtl/index.js",
+      "default": "./dist/rtl/index.js"
     }
   },
   "files": [
@@ -39,19 +49,30 @@
   ],
   "peerDependencies": {
     "@convex-dev/auth": ">=0.0.80",
+    "@playwright/test": ">=1.40.0",
     "@testing-library/react": ">=14.0.0",
+    "@testing-library/user-event": ">=14.0.0",
     "convex": ">=1.0.0",
     "convex-test": ">=0.0.1",
     "react": ">=18.0.0",
     "vitest": ">=1.0.0"
   },
   "peerDependenciesMeta": {
+    "@convex-dev/auth": {
+      "optional": true
+    },
+    "@playwright/test": {
+      "optional": true
+    },
     "@testing-library/react": {
       "optional": true
     },
-    "@convex-dev/auth": {
+    "@testing-library/user-event": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "feather-testing-core": "^0.1.0"
   },
   "scripts": {
     "build": "tsc",
@@ -60,6 +81,7 @@
   },
   "devDependencies": {
     "@convex-dev/auth": "^0.0.90",
+    "@playwright/test": "^1.58.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
