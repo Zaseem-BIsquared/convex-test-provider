@@ -981,19 +981,21 @@ When a Convex function calls `ctx.runQuery()` or `ctx.runMutation()`, the nested
 
 ## Agent Skills
 
-Install skills for AI coding agents via [skills.sh](https://skills.sh):
+AI coding agent skills for Convex testing are included in [feather-flow](https://github.com/siraj-samsudeen/feather-flow):
 
 ```bash
-npx skills add siraj-samsudeen/feather-testing-convex
+npx feather-flow
 ```
+
+This installs all feather-flow skills including:
 
 | Skill | When to Run | What It Checks |
 |-------|------------|----------------|
-| `setup-convex-testing` | No test config, or config errors | vitest.config.ts, test.setup.ts, deps, first test |
-| `add-convex-auth-testing` | Components use auth hooks | vitest plugin, renderWithConvexAuth, @convex-dev/auth |
-| `review-convex-tests` | After writing any test | 10-point quality checklist for test files |
+| `/feather:setup-convex-testing` | No test config, or config errors | vitest.config.ts, convex/test.setup.ts, Convex deps |
+| `/feather:add-convex-auth-testing` | Components use auth hooks | vitest plugin, renderWithConvexAuth, @convex-dev/auth |
+| `/feather:review-convex-tests` | After writing any test | 10-point quality checklist for test files |
 
-**Sequence:** setup → (if auth) add auth → write tests → review
+**Sequence:** setup-react-testing → setup-convex-testing → (if auth) add-convex-auth-testing → write tests → review-convex-tests
 
 ---
 
